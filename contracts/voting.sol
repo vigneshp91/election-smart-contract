@@ -15,6 +15,7 @@ contract Voting {
         string name;
         address owner;
         string proposal;
+        uint8 votes;
     }
     uint8 candiateId=0;
     mapping(uint8 => Candidate) candidates;
@@ -22,6 +23,7 @@ contract Voting {
     struct Voter{
         string name;
         address voterAddress;
+        uint8 no_of_votes;
     }
     mapping(address => Voter) voters;
 
@@ -65,6 +67,24 @@ contract Voting {
     function addVoter(string memory  name,address _voterAddrress) public{
         voters[_voterAddrress].name = name;
         voters[_voterAddrress].voterAddress = _voterAddrress;
+        voters[_voterAddrress].no_of_votes = 1;
     }
-    
+
+    function delegateVote(address voterAddress,address receiverAddress) public{
+        require(msg.sender==voterAddress,"Only voter can deligate his vote");
+        require(voters[voterAddress].no_of_votes>0,"voter not exists");
+        require(voters[receiverAddress].no_of_votes>0,"receiver not exists");
+
+        uint8 noofVotes = voters[voterAddress].no_of_votes;
+        voters[receiverAddress].no_of_votes+=noofVotes;
+        voters[voterAddress].no_of_votes-=1;
+    }
+
+    function vote(uint8 candidateId, address voter) public{
+        require(msg.sender==voter,"Only voter can cast his vote");
+        require(voters[voter].no_of_votes>0,"Voter already voted");
+        candidates[candidateId].votes+=1;
+        voters[voter].no_of_votes-=1;
+    }
+
 }

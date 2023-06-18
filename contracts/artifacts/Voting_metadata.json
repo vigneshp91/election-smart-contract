@@ -50,6 +50,24 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "voterAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "receiverAddress",
+						"type": "address"
+					}
+				],
+				"name": "delegateVote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "owner",
 						"type": "address"
 					}
@@ -85,6 +103,11 @@
 								"internalType": "string",
 								"name": "proposal",
 								"type": "string"
+							},
+							{
+								"internalType": "uint8",
+								"name": "votes",
+								"type": "uint8"
 							}
 						],
 						"internalType": "struct Voting.Candidate",
@@ -129,6 +152,11 @@
 								"internalType": "address",
 								"name": "voterAddress",
 								"type": "address"
+							},
+							{
+								"internalType": "uint8",
+								"name": "no_of_votes",
+								"type": "uint8"
 							}
 						],
 						"internalType": "struct Voting.Voter",
@@ -148,6 +176,24 @@
 					}
 				],
 				"name": "startElection",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "candidateId",
+						"type": "uint8"
+					},
+					{
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					}
+				],
+				"name": "vote",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -181,11 +227,11 @@
 	},
 	"sources": {
 		"contracts/voting.sol": {
-			"keccak256": "0x2cdd41bac665cd605022f9fb2f8b3e126e9432c8342c127f33eb702b40f7a331",
+			"keccak256": "0xa17d7c506843c81f9da9def5e649d380730c6f09870906ac35fe0c534c71894d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1b0b6d33510fb9d485ef29f0fe27936b3ee3d2c61a471646ea7f2122a058804a",
-				"dweb:/ipfs/QmQ9jEC2fARQrk8HxfwXTmxD4hGMtTjUdd4piKtkS7GpVo"
+				"bzz-raw://8e69d0499864f31aaaf9233d7696cee8c4757f6c41321204f3a6ac169cd9e7f4",
+				"dweb:/ipfs/QmeyWTmLxWgLyUz2C2ndELahpnG9iaKcJKLtoHw4mRMqSR"
 			]
 		}
 	},
