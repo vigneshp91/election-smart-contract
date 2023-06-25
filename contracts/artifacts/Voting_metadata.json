@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -65,13 +70,7 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					}
-				],
+				"inputs": [],
 				"name": "endElection",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -88,31 +87,37 @@
 				"name": "getCandidate",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "address",
-								"name": "owner",
-								"type": "address"
-							},
-							{
-								"internalType": "string",
-								"name": "proposal",
-								"type": "string"
-							},
-							{
-								"internalType": "uint8",
-								"name": "votes",
-								"type": "uint8"
-							}
-						],
-						"internalType": "struct Voting.Candidate",
+						"internalType": "uint8",
+						"name": "id",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "proposal",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCandidateCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
-						"type": "tuple"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -123,9 +128,9 @@
 				"name": "getElectionStatus",
 				"outputs": [
 					{
-						"internalType": "enum Voting.ElectionStatus",
+						"internalType": "string",
 						"name": "",
-						"type": "uint8"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -142,39 +147,72 @@
 				"name": "getVoter",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "address",
-								"name": "voterAddress",
-								"type": "address"
-							},
-							{
-								"internalType": "uint8",
-								"name": "no_of_votes",
-								"type": "uint8"
-							}
-						],
-						"internalType": "struct Voting.Voter",
-						"name": "",
-						"type": "tuple"
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "delegateaddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint8",
+						"name": "weight",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "votedTowards",
+						"type": "uint8"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "getVoterCount",
+				"outputs": [
 					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showWinner",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "id",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "Votes",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "startElection",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -227,11 +265,11 @@
 	},
 	"sources": {
 		"contracts/voting.sol": {
-			"keccak256": "0xa17d7c506843c81f9da9def5e649d380730c6f09870906ac35fe0c534c71894d",
+			"keccak256": "0x71b803c230c022314c8555ced80361fff8050b9ddc3929dff042561c86586fb8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8e69d0499864f31aaaf9233d7696cee8c4757f6c41321204f3a6ac169cd9e7f4",
-				"dweb:/ipfs/QmeyWTmLxWgLyUz2C2ndELahpnG9iaKcJKLtoHw4mRMqSR"
+				"bzz-raw://1e143b1f38503612d678f1ae1f5fdf42743c11fc192d8f8837e60bec0f56de8f",
+				"dweb:/ipfs/QmbXiFwJg3BZCKQgB1CEgM72SFNUjKoY5JWQYZ7r2DqiAv"
 			]
 		}
 	},
